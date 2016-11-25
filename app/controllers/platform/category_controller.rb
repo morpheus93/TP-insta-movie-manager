@@ -1,10 +1,7 @@
 class Platform::CategoryController < ApplicationController
 
 	def get_all
-
+		@categories = Category.all
 	end
 
-	def get_one(movie_id)
-
-	end
 end

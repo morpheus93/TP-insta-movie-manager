@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 	scope module: 'platform' do
 		get 'connect' => 'user#login', :as => 'platform_login'
 
+		get 'categories' => 'category#get_all', :as => 'platform_categories'
+
 		get 'movies' => 'movie#get_all', :as => 'platform_movies'
 		get 'movie/:slug' => 'movie#get_one', :as => 'platform_movie'
 	end

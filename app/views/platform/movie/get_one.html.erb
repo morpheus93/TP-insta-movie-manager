@@ -6,7 +6,7 @@
         </div>
     <% else %>
         <div class="bo-film embed-responsive embed-responsive-item">
-          <iframe width="420" height="315" src="https://www.youtube.com/embed/OWFBqiUgspg" frameborder="0" allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" src="<%= @movie.url_video %>"></iframe>
         </div>
     <% end %>
 
@@ -23,7 +23,7 @@
             <span class="label label-warning"><%= @movie.category.name %></span>
           </a>
           <% if user_signed_in? && current_user.admin %>
-              <a href="<%admin_edit_movie_path(movie.slug)%>">
+              <a href="<%admin_edit_movie_path(@movie.slug)%>">
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
               </a>
           <% end %>

@@ -38,11 +38,11 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li>
-		  <a href="<%= platform_movies_path =>"
+		  <a href="<%= platform_movies_path %>">
 		<i class="fa fa-film" aria-hidden="true"></i> List of movies
 		  </a>
         </li>
-        <li><a href="<%= platform_categories =>">
+        <li><a href="<%= platform_categories_path %>">
 <i class="fa fa-bookmark-o" aria-hidden="true"></i> List of categories</a></li>
       </ul>
 
@@ -56,7 +56,8 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="drop3">
                 <% if current_user.admin %>
-                    <li><a href="#">Admin section</a></li>
+                    <li><a href="<%= admin_movies_path%>">Admin movies</a></li>
+                    <li><a href="<%= admin_categories_path%>">Admin categories</a></li>
                     <li role="separator" class="divider"></li>
                 <% end %>
 
@@ -81,12 +82,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<!--<p class="notice"><%= notice %></p>-->
-<!--<p class="alert"><%= alert %></p>-->
-
 
 <%= yield %>
-
 
 <footer id="footer">
   <div class="container">
@@ -110,8 +107,8 @@
       </div>
 
       <div class="col-lg-4 col-md-6">
-        <p><a href="<%= platform_movies_path =>"</a></p>
-        <p><a href="#">List categories</a></p>
+        <p><a href="<%= platform_movies_path %>">List movies</a></p>
+        <p><a href="<%= platform_categories_path%>">List categories</a></p>
         <p><a href="#">Sign up</a></p>
       </div>
 
