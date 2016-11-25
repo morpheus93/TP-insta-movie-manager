@@ -12,4 +12,100 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.full-img {
+    width: 100%;
+}
+
+.movie img {
+    min-height: 360px;
+    max-height: 360px;
+}
+
+.banner-film {
+    background-color: black;
+}
+
+.bo-film {
+    height: 500px;
+}
+
+.movie div {
+    position: absolute;
+    bottom: 0px;
+    padding: 10px 0;
+    width: 100%;
+    font-weight: bold;
+    background-color: rgba(20, 20, 20, 0.5);
+}
+
+.movie span {
+    color: white;
+}
+
+.movie a:hover, .page-header a:hover {
+    text-decoration: none;
+}
+
+.movie .title-movie {
+    display: block;
+}
+
+.col-lg-2.col-md-3.col-sm-12 {
+    padding: 0;
+}
+
+#footer {
+    padding: 40px 0 30px;
+}
+
+#twitter-logo {
+    color: #00aced;
+}
+
+#facebook-logo {
+    color: #3b5998;
+}
+
+#googleplus-logo {
+    color: #dd4b39;
+}
+
+dd {
+    margin-bottom: 15px;
+}
+
+.fa-star {
+    color: gold;
+}
+
+#footer .container {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.caption h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.thumbnail {
+    min-height: 350px;
+}
+
+.push-top {
+    margin-top: 20px;
+}
+
+.media-object {
+    width: 80px;
+    height: 150px;
+}

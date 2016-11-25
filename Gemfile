@@ -17,6 +17,8 @@ gem 'devise'
 gem 'friendly_id', '~> 5.1.0'
 # Use kaminari to manage pagination => https://github.com/amatsuda/kaminari/
 gem 'kaminari'
+# Use Font awesome to manage icons
+gem 'font-awesome-rails'
 
 
 # See https://github.com/rails/execjs#readme for more supported runtimes

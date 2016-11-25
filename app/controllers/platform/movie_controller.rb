@@ -1,9 +1,11 @@
 class Platform::MovieController < ApplicationController
+
 	def get_all
 		@movies = Movie.page(params['page']).per(24)
 	end
 
 	def get_one
+		response.headers['X-FRAME-OPTIONS'] = ''
 		@slug = params['slug']
 		@movie = Movie.friendly.find(@slug)
 		@comments = Comment.where('movie_id = '+ @movie.id.to_s)
