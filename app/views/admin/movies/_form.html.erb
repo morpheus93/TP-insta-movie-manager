@@ -1,41 +1,61 @@
 <%= form_for (@movie), url: admin_add_movies_path  do |f| %>
-  <% if @movie.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+    <% if @movie.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
-      <ul>
-      <% @movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+                <% @movie.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+        <%= f.label :name, :class "col-sm-4 control-label" %>
+        <div class="col-sm-8">
+            <%= f.text_field :name, :class "form-control" %>
+        </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :url_thumbnail %><br>
-    <%= f.text_field :url_thumbnail %>
-  </div>
-  <div class="field">
-    <%= f.label :url_video %><br>
-    <%= f.text_field :url_video %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.number_field :note %>
-  </div>
-    <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group">
+        <%= f.label :description, :class "col-sm-4 control-label" %>
+        <div class="col-sm-8">
+            <%= f.text_field :description, :class "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :url_thumbnail, :class "col-sm-4 control-label" %>
+        <div class="col-sm-8">
+            <%= f.text_field :url_thumbnail, :class "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :url_video, :class "col-sm-4 control-label" %>
+        <div class="col-sm-8">
+            <%= f.text_field :url_video, :class "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :note, :class "col-sm-4 control-label" %>
+        <div class="col-sm-8">
+            <%= f.text_field :note, :class "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :category_id, :class "col-sm-4 control-label" %>
+        <div class="col-sm-8">
+            <%= f.text_field :category_id, :class "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <%= f.submit "Add", class: 'btn btn-primary' %>
+        </div>
+    </div>
 <% end %>

@@ -1,6 +1,20 @@
-<h1>Editing Movie</h1>
+<div class="container">
+    <div class="row">
 
-<%= render 'form' %>
+        <div class="col-lg-12">
 
-<%= link_to 'Show', @movie %> |
-<%= link_to 'Back', movies_path %>
+            <div class="page-header">
+                <h1>Edit movie</h1>
+            </div>
+
+            <%= render 'form' %>
+
+            <%= link_to 'Show', @movie %> |
+            <%= link_to 'Back', movies_path %>
+
+            <%= paginate @movies %>
+
+        </div>
+
+    </div>
+</div>
