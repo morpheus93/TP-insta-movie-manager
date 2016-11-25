@@ -71,9 +71,9 @@
             <li><a href="<%= new_user_registration_path %>">Sign up</a></li>
         <% end %>
       </ul>
-      <form action="#" class="navbar-form navbar-right">
+      <form action="<%=platform_search_result_path%>" class="navbar-form navbar-right">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Recherche">
+          <input type="text" name="search_param" id="search_param" class="form-control" placeholder="Recherche">
         </div>
       </form>
 

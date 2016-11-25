@@ -1,7 +1,6 @@
 class Platform::SearchController < ApplicationController
-
-	def index
-
-	end
-
+	def search
+    search = params['search_param']
+    @movies = Movie.where('name LIKE "%' + search.to_s + '%"')
+  end
 end
