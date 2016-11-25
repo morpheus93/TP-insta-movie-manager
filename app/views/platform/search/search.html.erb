@@ -1,5 +1,5 @@
 <div class="row">
-  <h1>Search results</h1>
+  <div class="col-lg-12"><h1>Search results</h1></div>
   <% @movies.each do |movie| %>
       <div class="col-lg-2 col-md-3 col-sm-12 movie text-center">
         <a href="<%=platform_movie_path(movie.slug)%>">
