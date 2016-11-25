@@ -1,0 +1,2 @@
+module Plateform::CategoryHelper
+end

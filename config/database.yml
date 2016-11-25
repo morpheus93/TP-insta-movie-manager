@@ -1,0 +1,6 @@
+development:
+  adapter: mysql2
+  database: TPRuby_development
+  username: root
+  password: root
+  host: localhost

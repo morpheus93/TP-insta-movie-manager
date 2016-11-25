@@ -1,0 +1,50 @@
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.movie img {
+  max-height: 360px;
+  width: 100%;
+}
+
+.movie div {
+  position: absolute;
+  bottom: 0px;
+  padding: 10px 0;
+  width: 100%;
+  font-weight: bold;
+  background-color: rgba(20, 20, 20, 0.5);
+}
+
+.movie span {
+  color: white;
+}
+
+.movie a:hover {
+  text-decoration: none;
+}
+
+.movie .title-movie {
+  display: block;
+}
+
+.col-lg-3.col-md-4.col-sm-12 {
+  padding: 0;
+}
+
+footer {
+  padding: 40px 0 30px;
+}
+
+#twitter-logo {
+  color: #00aced;
+}
+
+#facebook-logo {
+  color: #3b5998;
+}
+
+#googleplus-logo {
+  color: #dd4b39;
+}

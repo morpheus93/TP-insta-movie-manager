@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <% if user_signed_in? %>
+        <div class="banner-film">
+          <img src="<%= @movie.url_thumbnail %>">
+        </div>
+    <% else %>
+        <div class="bo-film embed-responsive embed-responsive-item">
+          <iframe class="embed-responsive-item" src="<%= @movie.url_video %>"></iframe>
+        </div>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="page-header">
+      <h1><%= @movie.name %>
+        <small>
+          <a href="#">
+            <span class="label label-warning"><%= @movie.category.name %></span>
+          </a>
+          <a href="#">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          </a>
+        </small>
+      </h1>
+    </div>
+
+    <div class="col-lg-8">
+      <dl class="dl-horizontal">
+        <dt>Date de sortie</dt>
+        <dd><%= @movie.release %></dd>
+
+        <dt>Description</dt>
+        <dd class="text-justify"><%= @movie.description %></dd>
+
+        <dt>Note de la critique</dt>
+        <dd>
+          <%= if @movie.note == nil
+                '0'
+              else
+                @movie.note
+              end
+          %>
+          /10 <i class="fa fa-star" aria-hidden="true"></i></dd>
+
+        <dt>Note des spectateurs</dt>
+        <dd>
+          <%= if @note == nil
+                '0'
+              else
+                @note
+              end
+          %>
+          /10<i class="fa fa-star" aria-hidden="true"></i></dd>
+      </dl>
+    </div>
+    <% if @similarMovies.size != 0 %>
+        <div class="col-lg-4">
+          <h3>Dans la même catégorie</h3>
+          <div class="well">
+            <% @similarMovies.each do |similarMovie| %>
+                <div class="media">
+                  <div class="media-left media-top">
+                    <a href="<%= platform_movie_path(similarMovie.slug) %>">
+                      <img class="media-object" src="<%= similarMovie.url_thumbnail %>">
+                    </a>
+                  </div>
+
+                  <div class="media-body">
+                    <h4 class="media-heading"><%= similarMovie.name %></h4>
+                    <%= similarMovie.description %>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+
+    <div class="col-lg-12">
+      <div class="page-header">
+        <h3>
+          <i class="fa fa-comments-o" aria-hidden="true"></i> Critiques
+          <small><%= @comments.size %></small>
+        </h3>
+      </div>
+
+      <% @comments.each do |comment| %>
+          <blockquote>
+            <p>
+              <%= comment.comment %>
+            </p>
+            <footer>
+              User <%= comment.user.name %>
+              <i class="fa fa-star" aria-hidden="true"></i> <?php endfor; ?>
+            </footer>
+          </blockquote>
+      <% end %>
+    </div>
+  </div>
+</div>

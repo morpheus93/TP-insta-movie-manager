@@ -1,0 +1,2 @@
+module Plateform::MovieHelper
+end

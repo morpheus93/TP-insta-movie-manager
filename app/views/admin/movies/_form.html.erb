@@ -1,0 +1,41 @@
+<%= form_for (@movie), url: admin_add_movies_path  do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :url_thumbnail %><br>
+    <%= f.text_field :url_thumbnail %>
+  </div>
+  <div class="field">
+    <%= f.label :url_video %><br>
+    <%= f.text_field :url_video %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.number_field :note %>
+  </div>
+    <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

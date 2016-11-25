@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Movies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Url thumbnail</th>
+      <th>Url video</th>
+      <th>Note</th>
+      <th>Slug</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.name %></td>
+        <td><%= movie.description %></td>
+        <td><%= movie.url_thumbnail %></td>
+        <td><%= movie.url_video %></td>
+        <td><%= movie.note %></td>
+        <td><%= movie.slug %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie', admin_new_movie_path %>
