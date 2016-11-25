@@ -84,9 +84,9 @@ ActiveRecord::Schema.define(version: 20161125085007) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "comments", "movies"
-  add_foreign_key "comments", "users"
-  add_foreign_key "movies", "categories"
-  add_foreign_key "note_movies", "movies"
-  add_foreign_key "note_movies", "users"
+  add_foreign_key "comments", "movies", :on_delete => :cascade
+  add_foreign_key "comments", "users", :on_delete => :cascade
+  add_foreign_key "movies", "categories", :on_delete => :cascade
+  add_foreign_key "note_movies", "movies", :on_delete => :cascade
+  add_foreign_key "note_movies", "users", :on_delete => :cascade
 end

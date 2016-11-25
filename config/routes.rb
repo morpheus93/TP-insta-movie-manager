@@ -11,12 +11,11 @@ Rails.application.routes.draw do
 
 		get 'movies' => 'movie#get_all', :as => 'platform_movies'
 		get 'movie/:slug' => 'movie#get_one', :as => 'platform_movie'
+
+		post 'movie/:slug/comment' =>'movie#add_comment', :as => 'platform_add_comment'
 	end
 
 	scope module: 'admin' do
-
-		# Home
-		get 'admin' => 'home#index', :as => 'admin_home'
 
 		# Movies management
 		get 'admin/movies' => 'movies#index', :as => 'admin_movies'

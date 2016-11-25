@@ -22,8 +22,8 @@
                         <td><%= movie.name %></td>
                         <td><%= movie.description %></td>
                         <td>
-                            <a href="<%= admin_edit_movie_path(movie.slug) %>">Modifier</a>
-                            <a href="<%= admin_delete_movie_path(movie.slug) %>">Supprimer</a>
+                            <a href="<%= admin_edit_movie_path(movie.slug) %>">Edit</a>
+                          <%= link_to 'Delete', admin_delete_movie_path(movie.slug) , method: 'delete' %>
                         </td>
                     </tr>
                     <% end %>

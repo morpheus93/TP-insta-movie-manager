@@ -5,12 +5,27 @@ class Platform::MovieController < ApplicationController
 	end
 
 	def get_one
-		response.headers['X-FRAME-OPTIONS'] = ''
 		@slug = params['slug']
 		@movie = Movie.friendly.find(@slug)
 		@comments = Comment.where('movie_id = '+ @movie.id.to_s)
 		@note = NoteMovie.where('movie_id = '+ @movie.id.to_s).average(:note)
 		@similarMovies = Movie.where('category_id =' + @movie.category.id.to_s + ' AND id != ' + @movie.id.to_s).order('RAND()').limit(3)
+		@new_comment = Comment.new
+
+	end
+
+	def add_comment
+		@slug = params['slug']
+		@movie = Movie.friendly.find(@slug)
+		parameters = params.require(:comment).permit(:comment)
+		parameters['movie_id'] = @movie.id
+		parameters['user_id'] = current_user.id
+		@comment = Comment.new(parameters)
+		respond_to do |format|
+			if @comment.save
+				format.html { redirect_to platform_movie_path(@movie.slug) }
+			end
+		end
 	end
 
 end
