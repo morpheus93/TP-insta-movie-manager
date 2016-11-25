@@ -19,7 +19,7 @@
     <div class="page-header">
       <h1><%= @movie.name %>
         <small>
-          <a href="#">
+          <a href="<%= platform_categories_movies_path(@movie.category.slug) %>">
             <span class="label label-warning"><%= @movie.category.name %></span>
           </a>
           <% if user_signed_in? && current_user.admin %>
