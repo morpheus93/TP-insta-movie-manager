@@ -1,37 +1,58 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+<div class="container">
+    <div class="row">
 
-    <div class="form-group">
-        <%= f.label :email, class: 'col-sm-4 control-label' %>
-        <div class="col-sm-8">
-            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        <div class="col-lg-12 push-top">
+            <div class="jumbotron">
+                <h1>Watch-Movies</h1>
+                <p>
+                    Watch-Movies est un service de streaming pour tous les films existants ! Avec des notes, des critiques, des bandes d'annonces ! Tout ça gratuit !
+                </p>
+                <p>
+                    <a class="btn btn-success btn-lg" href="/" role="button">Consulter la base de données de films gratuitement !</a>
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <%= f.label :password, class: 'col-sm-4 control-label' %>
+        <div class="col-lg-6">
+            <div class="page-header">
+                <h2>Log in</h2>
+            </div>
 
-        <div class="col-sm-8">
-            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+
+                <div class="form-group">
+                    <%= f.label :email, class: 'col-sm-4 control-label' %>
+                    <div class="col-sm-8">
+                        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :password, class: 'col-sm-4 control-label' %>
+
+                    <div class="col-sm-8">
+                        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                    </div>
+                </div>
+
+                <% if devise_mapping.rememberable? -%>
+                <div class="checkbox">
+                    <label>
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me %>
+                    </label>
+                </div>
+                <% end -%>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-10">
+                        <%= f.submit "Inscription", class: 'btn btn-primary' %>
+                    </div>
+                </div>
+            <% end %>
         </div>
-    </div>
 
-    <% if devise_mapping.rememberable? -%>
-    <div class="checkbox">
-        <label>
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-        </label>
     </div>
-    <% end -%>
-
-    <div class="form-group">
-        <div class="col-sm-offset-4 col-sm-10">
-            <%= f.submit "Inscription", class: 'btn btn-primary' %>
-        </div>
-    </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
