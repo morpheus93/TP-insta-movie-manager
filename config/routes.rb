@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 	root to: 'home#index'
 
 	scope module: 'platform' do
+		get 'movies/categories/:slug' => 'movie#get_categories', :as => 'platform_categories_films'
+
 		get 'search' => 'search#search', :as => 'platform_search_result'
 
 		get 'connect' => 'user#login', :as => 'platform_login'

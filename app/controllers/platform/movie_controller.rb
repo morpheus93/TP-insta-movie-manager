@@ -28,4 +28,9 @@ class Platform::MovieController < ApplicationController
 		end
 	end
 
+	def get_categories
+		@slug = params['slug']
+		category = Category.friendly.find(@slug)
+		@movies = Movie.where('category_id = ' + category.id.to_s).page(params['page']).per(24)
+	end
 end
