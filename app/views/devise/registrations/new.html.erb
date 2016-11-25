@@ -38,9 +38,6 @@
 
                 <div class="form-group">
                     <%= f.label :password, class: 'col-sm-4 control-label' %>
-                    <% if @minimum_password_length %>
-                        <em>(<%= @minimum_password_length %> characters minimum)</em>
-                    <% end %><br/>
 
                     <div class="col-sm-8">
                         <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
@@ -49,9 +46,6 @@
 
                 <div class="field">
                     <%= f.label :password_confirmation, class: 'col-sm-4 control-label' %>
-                    <% if @minimum_password_length %>
-                        <em>(<%= @minimum_password_length %> characters minimum)</em>
-                    <% end %><br/>
 
                     <div class="col-sm-8">
                         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
