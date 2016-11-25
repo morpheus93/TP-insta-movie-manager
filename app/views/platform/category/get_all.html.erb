@@ -10,7 +10,7 @@
           <div class="thumbnail">
             <img src="<%= category.picture_url %>>">
             <div class="caption">
-              <h3><%= category.name %></h3>
+              <h3><a href="<%= platform_categories_movies_path(category.slug)%>"><%= category.name %></a></h3>
             </div>
           </div>
         </div>

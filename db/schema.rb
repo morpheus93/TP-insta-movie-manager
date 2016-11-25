@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20161125085007) do
     t.string   "slug",          limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.date     "release"
+    t.string   "release"
     t.string   "director",      limit: 255
     t.string   "writer",        limit: 255
     t.string   "actor",         limit: 255

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 	root to: 'home#index'
 
 	scope module: 'platform' do
-		get 'movies/categories/:slug' => 'movie#get_categories', :as => 'platform_categories_films'
+		get 'movies/categories/:slug' => 'movie#get_categories', :as => 'platform_categories_movies'
 
 		get 'search' => 'search#search', :as => 'platform_search_result'
 
