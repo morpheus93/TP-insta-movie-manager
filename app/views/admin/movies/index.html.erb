@@ -31,8 +31,11 @@
             </table>
 
             <%= link_to 'New Movie', admin_new_movie_path %>
-            <%= paginate @movies %>
 
+        </div>
+
+        <div class="col-lg-12 text-center">
+            <%= paginate @movies %>
         </div>
 
     </div>
