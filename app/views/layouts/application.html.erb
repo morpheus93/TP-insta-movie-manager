@@ -38,9 +38,12 @@
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to 'Liste des films', platform_movies_path %>
+		  <a href="<%= platform_movies_path =>"
+		<i class="fa fa-film" aria-hidden="true"></i> List of movies
+		  </a>
         </li>
-        <li><a href="#">Liste des catégories</a></li>
+        <li><a href="<%= platform_categories =>">
+<i class="fa fa-bookmark-o" aria-hidden="true"></i> List of categories</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -107,9 +110,9 @@
       </div>
 
       <div class="col-lg-4 col-md-6">
-        <p><a href="#">Liste des films</a></p>
-        <p><a href="#">Liste des catégories</a></p>
-        <p><a href="#">Inscription</a></p>
+        <p><a href="<%= platform_movies_path =>"</a></p>
+        <p><a href="#">List categories</a></p>
+        <p><a href="#">Sign up</a></p>
       </div>
 
       <div class="col-lg-4 col-md-12">
