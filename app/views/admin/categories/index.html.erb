@@ -1,30 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <h1>Listing Categories</h1>
+  </div>
 
-<h1>Listing Categories</h1>
+  <div class="row">
+    <a href="<%= admin_new_category_path%>" class="btn btn-success" > Add category</a>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-hover">
+        <thead class="table-head">
+        <tr>
+          <th>Name</th>
+          <th>slug</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>picture_url</th>
-      <th>slug</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= category.picture_url %></td>
-        <td><%= category.slug %></td>
-        <td><%= link_to 'Show', admin_show_category_path(category)  %></td>
-        <td><%= link_to 'Edit', admin_edit_category_path(category) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Category', admin_new_category_path %>
+        <tbody>
+        <% @categories.each do |category| %>
+            <tr>
+              <td><%= category.name %></td>
+              <td><%= category.slug %></td>
+              <td><%= link_to 'Edit', admin_edit_category_path(category.slug) %></td>
+              <td><%= link_to 'Delete', admin_delete_category_path(category.slug) , method: 'delete' %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= paginate @categories %>
+</div>

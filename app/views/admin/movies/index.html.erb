@@ -22,7 +22,7 @@
                         <td><%= movie.name %></td>
                         <td><%= movie.description %></td>
                         <td>
-                            <a href="<%= admin_edit_movie_path(category.slug) %>">Modifier</a>
+                            <a href="<%= admin_edit_movie_path(movie.slug) %>">Modifier</a>
                             <a href="<%= admin_delete_movie_path(movie.slug) %>">Supprimer</a>
                         </td>
                     </tr>

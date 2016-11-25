@@ -6,7 +6,7 @@ class Admin::MoviesController < ApplicationController
 	# GET /movies
 	# GET /movies.json
 	def index
-		@movies = Movie.all
+		@movies = Movie.page(params['page']).per(24)
 	end
 
 	# GET /movies/1

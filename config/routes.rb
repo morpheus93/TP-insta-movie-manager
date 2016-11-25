@@ -21,26 +21,20 @@ Rails.application.routes.draw do
 		# Movies management
 		get 'admin/movies' => 'movies#index', :as => 'admin_movies'
 		get 'admin/movies/new' => 'movies#new', :as => 'admin_new_movie'
-		get 'admin/movies/:slug' => 'movies#show', :as => 'admin_show_movie'
 		get 'admin/movies/:slug' => 'movies#edit', :as => 'admin_edit_movie'
 
+		delete 'admin/movies/:slug' => 'movies#destroy', :as => 'admin_delete_movie'
+
 		post 'admin/movies' => 'movies#create', :as => 'admin_add_movies'
-
-		# Comments management
-		get 'admin/comment' => 'comments#index', :as => 'admin_comments'
-		get 'admin/comment/new' => 'comments#new', :as => 'admin_new_comment'
-		get 'admin/comment/:slug' => 'comments#show', :as => 'admin_show_comment'
-		get 'admin/comment/:slug' => 'comments#edit', :as => 'admin_edit_comment'
-
-		post 'admin/comment' => 'comments#create', :as => 'admin_add_comment'
 
 
 		# Categories management
 
 		get 'admin/categories' => 'categories#index', :as => 'admin_categories'
 		get 'admin/category/new' => 'categories#new', :as => 'admin_new_category'
-		get 'admin/category/:slug' => 'categories#show', :as => 'admin_show_category'
 		get 'admin/category/:slug' => 'categories#edit', :as => 'admin_edit_category'
+
+		delete 'admin/category/:slug' => 'categories#destroy', :as => 'admin_delete_category'
 
 		post 'admin/categories' => 'categories#create', :as => 'admin_add_category'
 
